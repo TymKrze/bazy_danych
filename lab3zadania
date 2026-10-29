@@ -1,0 +1,37 @@
+
+##zad1
+/*
+create table pracownik(
+	id_pracownika int auto_increment primary key,
+    imie varchar(40) not null,
+    nazwisko varchar(60) not null,
+    data_urodzenia date not null
+);
+insert into pracownik()
+values
+	(1,'adam','jankowski','2000-10-18'),
+    (2,'jan','kowalski','2000-01-01'),
+    (3,'jakub','prus','2000-12-12');
+
+select * from pracownik;
+UPDATE pracownik SET data_urodzenia = '2000-05-19' WHERE (id_pracownika = 1);
+*/
+##zad2
+/*
+create table zadanie(
+	id_zadania int auto_increment primary key,
+    nazwa_zadania varchar(150) not null,
+    priorytet enum('niski','normalny','wysoki'),
+    opis text null,
+    pracownik int null,
+    foreign key (pracownik) references pracownik(id_pracownika) on delete set null
+);
+alter table zadanie modify column priorytet enum('niski','normalny','wysoki') default 'normalny';
+
+insert into zadanie()
+values
+	(3,'zadanie','niski', null, 3);
+    */
+##zad3
+
+
