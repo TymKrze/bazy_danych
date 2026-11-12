@@ -32,6 +32,43 @@ insert into zadanie()
 values
 	(3,'zadanie','niski', null, 3);
     */
-##zad3
+##zad4
+update  zadanie
+SET projekt=1
+where id_zadania=1;
+
+update  zadanie
+SET projekt=2
+where id_zadania=2;
+
+update  zadanie
+SET projekt=1
+where id_zadania=3;
+
+create table sprint(
+id_sprintu int auto_increment primary key,
+numer_sprintu int,
+data_rozpoczecia date,
+data_zakonczenia date
+);
+
+alter table zadanie
+add column sprint int,
+add foreign key (sprint)
+references sprint(id_sprintu)
+on delete set null
+;
+insert into sprint(numer_sprintu,
+data_rozpoczecia,data_zakonczenia)
+values
+(123,'2020-01-15','2021-01-17');
+
+update zadanie
+set sprint =1
+where id_zadania=1;
+update zadanie
+set sprint =1
+where id_zadania=2;
+
 
 
